@@ -17,3 +17,5 @@ dontaudit {
   vendor_qti
   vendor_sensors_qti
 } vendor_diag_device:chr_file rw_file_perms;
+
+dontaudit hal_wifi_default self:capability sys_module;
