@@ -104,6 +104,7 @@
         <activity
             android:name=".thermal.ThermalActivity"
             android:label="@string/thermal_title"
+            android:exported="true"
             android:icon="@drawable/ic_thermal_settings"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
@@ -126,6 +127,7 @@
         <service
             android:name=".RefreshRateTileService"
             android:icon="@drawable/ic_qs_refresh_rate"
+            android:exported="true"
             android:label="@string/refresh_rate_tile_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
