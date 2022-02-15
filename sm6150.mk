@@ -177,6 +177,7 @@ PRODUCT_PACKAGES += \
 
 # Overlay
 PRODUCT_PACKAGES += \
+    AOSPASM6150FrameworksOverlay \
     SM6150FrameworksOverlay \
     SM6150SettingsOverlay \
     SM6150SettingsProviderOverlay \
