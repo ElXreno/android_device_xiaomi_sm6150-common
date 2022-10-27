@@ -279,7 +279,9 @@ PRODUCT_ENFORCE_RRO_TARGETS += *
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.xiaomi-libperfmgr
+    android.hardware.power-service-qti
+
+$(call inherit-product-if-exists, vendor/qcom/opensource/power/power-vendor-product.mk)
 
 # QTI
 PRODUCT_PACKAGES += \
