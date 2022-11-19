@@ -8,3 +8,5 @@ allow system_app sysfs_vibrator:file rw_file_perms;
 
 # Xiaomi Parts
 allow system_app sysfs_thermal:file rw_file_perms;
+
+allow system_app proc_pagetypeinfo:file r_file_perms;
