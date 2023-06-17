@@ -273,6 +273,9 @@ PRODUCT_ENFORCE_RRO_TARGETS += *
 PRODUCT_PACKAGES += \
     android.hardware.power-service
 
+# Platform
+TARGET_BOARD_PLATFORM := sm6150
+
 # QTI
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor
