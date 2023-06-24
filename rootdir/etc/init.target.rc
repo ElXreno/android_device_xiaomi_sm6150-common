@@ -84,6 +84,10 @@ on post-fs-data
     mkdir /data/vendor/goodix 0770 system system
     mkdir /mnt/vendor/persist/fpc 0770 system system
 
+    # Allow system to adjust haptic level directly
+    chown system system /sys/devices/platform/soc/a8c000.i2c/i2c-2/2-005a/ulevel
+    chmod 0664 /sys/devices/platform/soc/a8c000.i2c/i2c-2/2-005a/ulevel
+
 on boot
     start rmt_storage
     start rfs_access
@@ -145,6 +149,16 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/nnapi-hal/cpu.shares 20480
     write /dev/cpuctl/rt/cpu.shares 20480
     write /dev/cpuctl/top-app/cpu.shares 20480
+
+    # Start custom post_boot script
+    start target-post-boot
+
+service target-post-boot /vendor/bin/sh /vendor/bin/init.target.post_boot.sh
+    class core
+    user root
+    group root system wakelock graphics
+    disabled
+    oneshot
 
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
@@ -211,3 +225,15 @@ service vendor.nv_mac /vendor/bin/nv_mac
     user system
     group system inet net_admin wifi net_raw
     oneshot
+
+service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
+    override
+    class hal
+    user audioserver
+    # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
+    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock
+    capabilities BLOCK_SUSPEND
+    ioprio rt 4
+    task_profiles ProcessCapacityHigh HighPerformance
+    socket audio_hw_socket seqpacket 0666 system system
+    onrestart restart audioserver

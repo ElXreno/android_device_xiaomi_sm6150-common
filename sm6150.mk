@@ -156,15 +156,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hotword-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hotword-hiddenapi-package-whitelist.xml
 
 # Init scripts
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc
+PRODUCT_PACKAGES += \
+    init.qti.early_init.sh \
+    init.target.post_boot.sh
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/bin/init.qcom.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.post_boot.sh \
-    $(LOCAL_PATH)/rootdir/bin/init.qcom.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.sh \
-    $(LOCAL_PATH)/rootdir/bin/init.qti.early_init.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.early_init.sh
+    $(LOCAL_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -217,6 +214,7 @@ TARGET_COMMON_QTI_COMPONENTS += \
     av \
     bt \
     gps \
+    init \
     media \
     overlay \
     perf \
@@ -226,9 +224,6 @@ TARGET_COMMON_QTI_COMPONENTS += \
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_xiaomi
-
-PRODUCT_PACKAGES += \
-    init.recovery.qcom.rc
 
 # Sensors
 PRODUCT_PACKAGES += \
