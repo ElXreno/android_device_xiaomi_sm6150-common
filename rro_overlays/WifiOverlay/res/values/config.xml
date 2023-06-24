@@ -4,9 +4,6 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Boolean indicating whether the WiFi chipset has 6GHz band support -->
-    <bool name="config_wifi6ghzSupport" translatable="false">true</bool>
-
     <!-- Indicates that AP mode MAC randomization is supported on this device -->
     <bool name="config_wifi_ap_mac_randomization_supported" translatable="false">true</bool>
 
