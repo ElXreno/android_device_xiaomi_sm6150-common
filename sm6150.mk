@@ -218,13 +218,10 @@ TARGET_COMMON_QTI_COMPONENTS += \
     bt \
     gps \
     media \
+    overlay \
     perf \
     telephony \
     usb
-
-# RIL
-PRODUCT_PACKAGES += \
-    CarrierConfigOverlay
 
 # Recovery
 PRODUCT_PACKAGES += \
