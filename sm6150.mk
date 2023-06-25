@@ -130,11 +130,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
 
-# Health
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl-qti \
-    android.hardware.health@2.1-service
-
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport.vendor \
@@ -203,6 +198,7 @@ TARGET_COMMON_QTI_COMPONENTS += \
     alarm \
     av \
     bt \
+    charging \
     gps \
     init \
     media \
