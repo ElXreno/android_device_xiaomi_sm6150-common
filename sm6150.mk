@@ -194,7 +194,8 @@ PRODUCT_PACKAGES += \
     SM6150FrameworksOverlay \
     SM6150SettingsOverlay \
     SM6150SettingsProviderOverlay \
-    SM6150SystemUIOverlay
+    SM6150SystemUIOverlay \
+    SM6150WifiOverlay
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
 
@@ -271,7 +272,6 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml \
     libwpa_client \
-    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 

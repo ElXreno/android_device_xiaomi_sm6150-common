@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2019 The Android Open Source Project
+<!-- Copyright (C) 2023 Paranoid Android
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,13 +15,10 @@
 -->
 <!-- Xiaomi sm6150 specific wifi overlays -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.wifi.resources.xiaomi_sm6150"
-    android:versionCode="1"
-    android:versionName="1.0">
-    <application android:hasCode="false" />
-    <overlay
-      android:targetPackage="com.android.wifi.resources"
-      android:targetName="WifiCustomization"
-      android:isStatic="true"
-      android:priority="0"/>
+    package="com.android.wifi.resources.overlay.xiaomi_sm6150">
+
+     <overlay
+        android:isStatic="true"
+        android:priority="800"
+        android:targetPackage="com.android.wifi.resources" />
 </manifest>
