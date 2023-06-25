@@ -190,9 +190,11 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aosp
+PRODUCT_PACKAGES += \
+    SM6150FrameworksOverlay \
+    SM6150SettingsOverlay \
+    SM6150SettingsProviderOverlay \
+    SM6150SystemUIOverlay
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
 
