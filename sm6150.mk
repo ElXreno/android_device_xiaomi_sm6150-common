@@ -197,10 +197,6 @@ PRODUCT_PACKAGES += \
 # Platform
 TARGET_BOARD_PLATFORM := sm6150
 
-# QTI
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist.xml
-
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS += \
     adreno \
