@@ -16,12 +16,12 @@
 
 sh_binary {
     name: "init.qti.early_init.sh",
-    src: "bin/init.qti.early_init.sh",
+    src: "init.qti.early_init.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "init.target.post_boot.sh",
-    src: "bin/init.target.post_boot.sh",
+    src: "init.target.post_boot.sh",
     vendor: true,
 }
